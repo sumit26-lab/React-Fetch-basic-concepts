@@ -1,24 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
-
+import PageOne from './Compone/page/PageOne';
+import Pagetwo from './Compone/page/Pagetwo';
+import PageThree from './Compone/page/PageThree'
+import {Route,Switch} from  'react-router-dom'
+import Main_Navigation   from './Compone/Lyout_Link/Main_Navigation'
+import { Layout } from './Compone/Layout/Layout';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+    
+    <Switch>
+
+    <Route exact path="/">
+    <PageOne/>
+
+    </Route>
+    <Route path="/Pagetwo">
+     <Pagetwo/>
+
+    </Route>
+    <Route path="/PageThree">
+    <PageThree/>
+
+    </Route>
+    </Switch>
+
+    </Layout>
   );
 }
 
